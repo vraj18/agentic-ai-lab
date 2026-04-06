@@ -1,15 +1,25 @@
-# Day 1: Rule-Based Agent
+# Day 1 - Rule-Based AI Agent
 
-## Approach
-- Used keyword matching to detect intent
-- Built a simple pipeline:
-  Input → Intent Detection → Action Execution
+## Objective
+Build a simple AI agent that uses rule-based logic to interpret user commands and perform actions.
 
-## Features
-- Calculator
-- Date retrieval
-- Greeting response
+## Implementation
+- `agent.py` contains:
+  - `InputHandler`: normalizes and preprocesses user text.
+  - `DecisionLogic`: matches keywords to determine intent.
+  - `ActionExecutor`: performs actions like greeting, returning the current date/time, and evaluating simple calculations.
+  - `RuleBasedAgent`: connects the pipeline `Input -> Decision -> Action`.
 
-## Learning
-- Basic agent workflow
-- Rule-based decision making
+## Usage
+Run the agent from the `day1` folder:
+```bash
+python agent.py
+```
+
+Supported commands:
+- `hello`, `hi`, `hey`
+- `date`
+- `time`
+- `calculate 2 + 3`
+- `what is 10 / 2`
+- `exit`

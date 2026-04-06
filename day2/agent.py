@@ -1,44 +1,72 @@
-from tools import calculator, weather, summarize
+try:
+    from . import tools
+except ImportError:
+    import tools
 
-def decide_tool(user_input):
-    user_input = user_input.lower()
 
-    if "calculate" in user_input:
-        return "calculator"
-    elif "weather" in user_input:
-        return "weather"
-    elif "summarize" in user_input:
-        return "summarize"
-    else:
+class InputHandler:
+    def normalize(self, raw_input: str) -> str:
+        return raw_input.strip().lower()
+
+
+import re
+
+
+def _contains_keyword(text: str, keywords: list[str]) -> bool:
+    for word in keywords:
+        if re.search(r"\b" + re.escape(word) + r"\b", text):
+            return True
+    return False
+
+
+class ToolSelector:
+    def choose(self, normalized_input: str) -> str:
+        if _contains_keyword(normalized_input, ["calculate", "what is", "compute", "sum", "add", "subtract"]):
+            return "calculator"
+        if _contains_keyword(normalized_input, ["weather", "forecast", "temperature"]):
+            return "weather"
+        if _contains_keyword(normalized_input, ["summarize", "summary", "summariser"]):
+            return "summarizer"
         return "unknown"
 
-def run_tool(tool, user_input):
-    if tool == "calculator":
-        expression = user_input.replace("calculate", "")
-        return calculator(expression)
 
-    elif tool == "weather":
-        return weather()
+class ToolExecutor:
+    def execute(self, tool_name: str, raw_input: str) -> str:
+        if tool_name == "calculator":
+            return tools.calculator(raw_input)
+        if tool_name == "weather":
+            return tools.weather()
+        if tool_name == "summarizer":
+            return tools.summarizer(raw_input)
+        return "I could not choose a tool for your request. Try calculator, weather, or summarizer."
 
-    elif tool == "summarize":
-        text = user_input.replace("summarize", "")
-        return summarize(text)
 
-    else:
-        return "No suitable tool found"
+class ToolUsingAgent:
+    def __init__(self):
+        self.handler = InputHandler()
+        self.selector = ToolSelector()
+        self.executor = ToolExecutor()
+
+    def respond(self, user_input: str) -> str:
+        normalized = self.handler.normalize(user_input)
+        tool = self.selector.choose(normalized)
+        return self.executor.execute(tool, user_input)
+
 
 def main():
-    print("Tool-Based Agent")
+    agent = ToolUsingAgent()
+    print("Day 2 - Tool-Using Agent")
+    print("Enter a request, or type 'exit' to stop.")
     while True:
-        user_input = input(">> ")
-
-        if user_input == "exit":
+        raw_input_value = input("You: ").strip()
+        if not raw_input_value:
+            continue
+        if raw_input_value.lower() in {"exit", "quit", "bye"}:
+            print("Agent: Goodbye!")
             break
+        response = agent.respond(raw_input_value)
+        print(f"Agent: {response}")
 
-        tool = decide_tool(user_input)
-        result = run_tool(tool, user_input)
-
-        print(result)
 
 if __name__ == "__main__":
     main()

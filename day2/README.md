@@ -1,14 +1,26 @@
-# Day 2: Tool-Based Agent
+# Day 2 - Tool-Using AI Agent
 
-## Approach
-- Created reusable tools in tools.py
-- Agent selects tool based on query
+## Objective
+Extend the rule-based agent to use modular tools and decide which tool to call based on user input.
 
-## Tools
-- Calculator
-- Weather (mock)
-- Summarizer
+## Implementation
+- `tools.py` includes:
+  - `calculator(text)`: evaluates arithmetic expressions.
+  - `weather(location)`: returns a mocked weather report.
+  - `summarizer(text)`: generates a short summary from text.
+- `agent.py` includes:
+  - `InputHandler`: normalizes user input.
+  - `ToolSelector`: chooses which tool to use based on keywords.
+  - `ToolExecutor`: calls the selected tool and returns the result.
 
-## Learning
-- Tool abstraction
-- Modular coding
+## Usage
+Run from the `day2` folder:
+```bash
+python agent.py
+```
+
+Example inputs:
+- `calculate 12 / 4`
+- `what is 7 + 5`
+- `weather today`
+- `summarize This is a long text that needs a short summary.`

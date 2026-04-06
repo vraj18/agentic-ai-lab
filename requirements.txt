@@ -1,0 +1,2 @@
+# Optional dependency for Day 3 if OpenAI integration is desired
+openai>=0.27.0
