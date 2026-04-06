@@ -1,0 +1,41 @@
+[2026-04-06T14:58:52.534795] INPUT: summarize this is a test. | TOOL: calculator | OUTPUT: Unsafe expression. Use only digits and +, -, *, /, parentheses.
+[2026-04-06T14:59:19.896715] INPUT: summarize this is a test. | TOOL: calculator | OUTPUT: Unsafe expression. Use only digits and +, -, *, /, parentheses.
+[2026-04-06T15:00:42.150632] INPUT: summarize this is a test. | TOOL: summarizer | OUTPUT: Summary tool output -> summarize this is a test.
+[2026-04-06T15:02:47.779393] INPUT: hello | TOOL: unknown | OUTPUT: I could not select a tool for your request. Try asking for a calculation, weather report, or a summary.
+[2026-04-06T15:02:54.800010] INPUT: calculate 6+7 | TOOL: calculator | OUTPUT: Tool output -> 13
+[2026-04-06T15:03:00.125361] INPUT: weather in dubai | TOOL: weather | OUTPUT: Weather tool output for your location:
+- Condition: Light breeze and partly sunny
+- Temperature: 24°C
+- Humidity: 55%
+- Note: This is a mocked weather report.
+[2026-04-06T15:03:09.406966] INPUT: summary i am vraj | TOOL: summarizer | OUTPUT: Summary tool output -> summary i am vraj
+[2026-04-06T15:03:16.955687] INPUT: summarize hello there i am vraj | TOOL: summarizer | OUTPUT: Summary tool output -> summarize hello there i am vraj
+[2026-04-06T15:03:20.379534] INPUT: hello there | TOOL: unknown | OUTPUT: I could not select a tool for your request. Try asking for a calculation, weather report, or a summary.
+[2026-04-06T15:03:33.841131] INPUT: cd .. | TOOL: unknown | OUTPUT: I could not select a tool for your request. Try asking for a calculation, weather report, or a summary.
+[2026-04-06T15:06:44.671037] INPUT: calculate 5+5 | TOOL: calculator | OUTPUT: Tool output -> 10
+[2026-04-06T15:06:52.468176] INPUT: weather | TOOL: weather | OUTPUT: Weather tool output for your location:
+- Condition: Light breeze and partly sunny
+- Temperature: 24°C
+- Humidity: 55%
+- Note: This is a mocked weather report.
+[2026-04-06T15:07:11.128331] INPUT: summarize weather calculate 6+6 | TOOL: calculator | OUTPUT: Tool output -> 12
+[2026-04-06T15:07:16.949545] INPUT: summarize weather | TOOL: weather | OUTPUT: Weather tool output for your location:
+- Condition: Light breeze and partly sunny
+- Temperature: 24°C
+- Humidity: 55%
+- Note: This is a mocked weather report.
+[2026-04-06T15:07:21.371510] INPUT: weather summarize hello | TOOL: weather | OUTPUT: Weather tool output for your location:
+- Condition: Light breeze and partly sunny
+- Temperature: 24°C
+- Humidity: 55%
+- Note: This is a mocked weather report.
+[2026-04-06T15:07:31.153935] INPUT: weather surat | TOOL: weather | OUTPUT: Weather tool output for your location:
+- Condition: Light breeze and partly sunny
+- Temperature: 24°C
+- Humidity: 55%
+- Note: This is a mocked weather report.
+[2026-04-06T15:07:32.312355] INPUT: clear | TOOL: unknown | OUTPUT: I could not select a tool for your request. Try asking for a calculation, weather report, or a summary.
+[2026-04-06T15:11:05.494909] INPUT: Agentic AI systems combine reasoning, planning, and tool use to solve tasks. They can call functions, break a problem into multiple steps, and return a final result. This makes automation more flexible and easier to extend. | TOOL: unknown | OUTPUT: I could not select a tool for your request. Try asking for a calculation, weather report, or a summary.
+[2026-04-06T15:11:10.422499] INPUT: summarize Agentic AI systems combine reasoning, planning, and tool use to solve tasks. They can call functions, break a problem into multiple steps, and return a final result. This makes automation more flexible and easier to extend. | TOOL: summarizer | OUTPUT: Summary tool output -> summarize Agentic AI systems combine reasoning, planning, and tool use to solve tasks. They can call functions, break a problem into multiple steps, and return a final result. This makes automation more flexible and easier to extend.
+[2026-04-06T15:11:27.460597] INPUT: summary Agentic AI systems combine reasoning, planning, and tool use to solve tasks. They can call functions, break a problem into multiple steps, and return a final result. This makes automation more flexible and easier to extend. | TOOL: summarizer | OUTPUT: Summary tool output -> summary Agentic AI systems combine reasoning, planning, and tool use to solve tasks. They can call functions, break a problem into multiple steps, and return a final result. This makes automation more flexible and easier to extend.
+[2026-04-06T15:14:41.961078] INPUT: summarize Agentic AI systems combine reasoning, planning, and tool use to solve tasks. They can call functions, break a problem into multiple steps, and return a final result. This makes automation more flexible and easier to extend. | TOOL: summarizer | OUTPUT: Summary tool output -> summarize Agentic AI systems combine reasoning, planning, and tool use to solve tasks. They can call functions, break a problem into multiple...
